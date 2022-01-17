@@ -23,6 +23,45 @@ var passwordLengthSelected =
     window.alert("You did not pick a valid option. Please type a number between 8 and 128.")
     // HOW TO RE-START THIS LOOP?  
 
+// Prompt user to select password criteria
+var passwordCriteria = 
+    
+  // ask if user wants to include lowercase letters
+  lowerCaseIncluded = window.confirm("Do you want to include lowercase letters?");
+  if (lowerCaseIncluded == true) {
+     console.log ("lowercase included");
+  }
+    else {
+      console.log ("lowercase not included");
+    }
+    
+  // ask if user wants to include uppercase letters
+  upperCaseIncluded = window.confirm("Do you want to include uppercase letters?");
+  if (upperCaseIncluded == true) {
+     console.log ("uppercase included");
+  }
+     else {
+       console.log ("uppercase not included");
+     }
+    
+  // ask if user wants to include numbers
+  numbersIncluded = window.confirm("Do you want to include numbers?");
+  if (upperCaseIncluded == true) {
+    console.log ("numbers included");
+  }
+    else {
+      console.log ("numbers not included");
+    }
+    
+  // ask if user wants to include special characters
+  specialIncluded = window.confirm("Do you want to include special characters?");
+  if (specialIncluded == true) {
+    console.log ("special characters included");
+  }
+    else {
+      console.log ("special characters not included");
+    }
+
 
 // button variable and i.d.
 var generateBtn = document.querySelector("#generate");
@@ -42,7 +81,7 @@ generateBtn.addEventListener("click", writePassword);
 
 /*
 -Step 1. list items in an array of possible types which the user can choose from
-Step 2. Create a user prompt for password length, then which types the user would like to include (numbers, lowercase, uppercase, special characters?)
+-Step 2. Create a user prompt for password length, then which types the user would like to include (numbers, lowercase, uppercase, special characters?)
 Step 3. Create a filter to know which characters to include
 Step 4. Create a validation method for double checking at least one character type was included
 Step 5. Create a variable to contain user input
