@@ -1,9 +1,11 @@
 
 // Arrays for holding lowercase + uppercase letters, numbers, and special characters
 var lowerCase = [ 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z' ];    
-var upperCasedCharacters = [ 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z' ];
+var upperCase = [ 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z' ];
 var numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
 var specialCharacters = ['!', '@', '#', '$', '%', '^', '(', ')', '-', '+', '/', '?', '{', '}', '[', ']', '~' ];
+let selectedCriteria = [];
+let prior = [];
 
 // Prompt for the user to select password length
 var passwordLengthSelected =
@@ -29,6 +31,7 @@ var passwordCriteria =
     lowerCaseIncluded = window.confirm("Do you want to include lowercase letters?");
     if (lowerCaseIncluded == true) {
       console.log ("lowercase included");
+      selectedCriteria.push(...lowerCase);
     }
       else {
         console.log ("lowercase not included");
@@ -38,6 +41,7 @@ var passwordCriteria =
     upperCaseIncluded = window.confirm("Do you want to include uppercase letters?");
     if (upperCaseIncluded == true) {
       console.log ("uppercase included");
+      selectedCriteria.push(...upperCase);
     }
       else {
         console.log ("uppercase not included");
@@ -47,19 +51,23 @@ var passwordCriteria =
     numbersIncluded = window.confirm("Do you want to include numbers?");
     if (numbersIncluded == true) {
       console.log ("numbers included");
+      selectedCriteria.push(...numbers);
     }
       else {
         console.log ("numbers not included");
       }
-    
-  // ask if user wants to include special characters
-  specialIncluded = window.confirm("Do you want to include special characters?");
-  if (specialIncluded == true) {
-    console.log ("special characters included");
-  }
-    else {
-      console.log ("special characters not included");
+
+    // ask if user wants to include special characters
+    specialIncluded = window.confirm("Do you want to include special characters?");
+    if (specialIncluded == true) {
+      console.log ("special characters included");
+      selectedCriteria.push(...specialCharacters);
     }
+      else {
+        console.log ("special characters not included");
+      }
+
+  console.log(selectedCriteria);
 
 // Function to validate password strength by checking at least one prompt was answered true/yes
 function strengthValidator () {
@@ -103,3 +111,15 @@ Step 6. Create a loop to generate random string (completed password)
 Step 7. Push the randomly generated password to HTML text-box
 Step 8. Display the password to the user
 */
+
+
+
+//https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/push
+// let vegetables = ['parsnip', 'potato']
+// let moreVegs = ['celery', 'beetroot']
+// let evenMoreVegs = ['brocolli', 'cellery'];
+
+// // Merge the second array into the first one
+// vegetables.push(...moreVegs);
+// vegetables.push(...evenMoreVegs);
+// console.log(vegetables);
