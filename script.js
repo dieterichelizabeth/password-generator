@@ -5,7 +5,6 @@ var upperCase = [ 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M
 var numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
 var specialCharacters = ['!', '@', '#', '$', '%', '^', '(', ')', '-', '+', '/', '?', '{', '}', '[', ']', '~' ];
 let selectedCriteria = [];
-let prior = [];
 
 // Prompt for the user to select password length
 var passwordLengthSelected =
@@ -13,7 +12,7 @@ var passwordLengthSelected =
     window.prompt (
       "How long would you like your password to be? Please enter a number between 8 and 128."
     );
-    console.log (passwordLengthSelected);
+    console.log ("character length selected = " +passwordLengthSelected);
     // if...else to validate acceptable # chosen
     if (passwordLengthSelected >= 8 && passwordLengthSelected <= 128) {
       // if this statement is true, the value is saved --> move to the next function
@@ -29,6 +28,7 @@ var passwordLengthSelected =
 var passwordCriteria = 
     // ask if user wants to include lowercase letters
     lowerCaseIncluded = window.confirm("Do you want to include lowercase letters?");
+    // if the user selects yes, then lowercase letters are added to selectedCriteria array
     if (lowerCaseIncluded == true) {
       console.log ("lowercase included");
       selectedCriteria.push(...lowerCase);
@@ -39,6 +39,7 @@ var passwordCriteria =
       
     // ask if user wants to include uppercase letters
     upperCaseIncluded = window.confirm("Do you want to include uppercase letters?");
+    // if the user selects yes, then uppercase letters are added to selectedCriteria array
     if (upperCaseIncluded == true) {
       console.log ("uppercase included");
       selectedCriteria.push(...upperCase);
@@ -49,6 +50,7 @@ var passwordCriteria =
       
     // ask if user wants to include numbers
     numbersIncluded = window.confirm("Do you want to include numbers?");
+    // if the user selects yes, then numbers are added to selectedCriteria array
     if (numbersIncluded == true) {
       console.log ("numbers included");
       selectedCriteria.push(...numbers);
@@ -59,6 +61,7 @@ var passwordCriteria =
 
     // ask if user wants to include special characters
     specialIncluded = window.confirm("Do you want to include special characters?");
+    // if the user selects yes, then special characters are added to selectedCriteria array
     if (specialIncluded == true) {
       console.log ("special characters included");
       selectedCriteria.push(...specialCharacters);
@@ -84,6 +87,14 @@ function strengthValidator () {
     // window.alert("come back when you want a strong password.");}
   }
 
+// For loop to randomize # and adjust to selected length
+function randomize () {
+  for (var selectedCriteria = 0; i = passwordLengthSelected; i++) {
+    var selectedCriteria = Math.floor(Math.random() * (i + 1));
+  }
+}
+console.log(selectedCriteria);
+
 // button variable and i.d.
 var generateBtn = document.querySelector("#generate");
 
@@ -104,9 +115,9 @@ strengthValidator ();
 /*
 -Step 1. list items in an array of possible types which the user can choose from
 -Step 2. Create a user prompt for password length, then which types the user would like to include (numbers, lowercase, uppercase, special characters?)
-Step 3. Create a filter to know which characters to include (conditional?/switch?)
+-Step 3. Create a filter to know which characters to include (conditional?/switch?)
 -Step 4. Create a validation method for double checking at least one character type was included
-Step 5. Create a variable to contain user input
+-Step 5. Create a variable to contain user input
 Step 6. Create a loop to generate random string (completed password)
 Step 7. Push the randomly generated password to HTML text-box
 Step 8. Display the password to the user
