@@ -108,7 +108,7 @@ var generateBtn = document.querySelector("#generate");
 // Write password to the #password input
 function writePassword() {
   window.alert("Ready for your new password?");
-  var password = generatePassword(); 
+  var password = completePassword; 
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
@@ -118,6 +118,7 @@ function writePassword() {
 generateBtn.addEventListener("click", writePassword);
 
 strengthValidator ();
+writePassword ();
 
 /*
 -Step 1. list items in an array of possible types which the user can choose from
@@ -127,8 +128,8 @@ strengthValidator ();
 -Step 5. Create a variable to contain user input
 -Step 6. Create a loop to generate random values from criteria by selected length
 -Step 7. turn randomized array into a string (completed password)
-Step 8. Push the randomly generated password to HTML text-box
-Step 9. Display the password to the user
+-Step 8. Push the randomly generated password to HTML text-box
+-Step 9. Display the password to the user
 */
 
 /* NOTES */
