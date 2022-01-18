@@ -26,10 +26,10 @@ WHEN the password is generated
 THEN the password is either displayed in an alert or written to the page"
 ```
 
-To complete this project, I created 4 arrays for available character types, and one empty array. Then created prompts for password length (validated through an if...else statement), as well as window confirms to let a user select what type of characters they want to include (pressing 'ok' = true and included, 'cancel' = false and excluded). Once a character type is confirmed yes/true, it is pushed into the empty array, to store the user's choices.
-Another function (the strength validator) includes an if...else statement which checks that at least one type of character was chosen to move forward.
+To complete this project, I created 4 arrays for available character types, and one empty array. Then created the start function, with prompts for password length (validated through an if...else statement), as well as window confirms to let a user select what type of characters they want to include (pressing 'ok' = included, 'cancel' = excluded). Once a character type is confirmed yes/true, it is pushed into the empty array, to store the user's choices.
+Another if...else statement checks that at least one type of character was chosen to move forward.
 After the user's choices are stored, the array goes through a for loop (called randomizer), which grabs random values from the user's choice array, and runs through the password length selected.
-The .join method is then used to turn the result of the for loop into a string without commas.
+The .join method is then turns the result of the for loop into a string without commas.
 Lastly, I linked the writepassword function to the completePassword method so the string would be displayed on the page. (the writePassword function was previously provided, as well as buttons).
 
 ## Screenshots
@@ -47,6 +47,7 @@ Lastly, I linked the writepassword function to the completePassword method so th
 - [Math.random()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random#getting_a_random_integer_between_two_values_inclusive)
 - [For loops](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for)
 - [Array.prototype.join()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/join)
+- [Window confirm()](https://www.w3schools.com/jsref/met_win_confirm.asp)
 
 ## Used For
 
