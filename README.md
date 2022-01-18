@@ -1,20 +1,12 @@
 # Password Generator
 
-Challenge: 03 Javascript, HTML, and CSS: String Generator
+Challenge: 03 Javascript: String Generator ✨
 
-This project is an application which generates random passwords for individuals after they've selected particular criteria.
-The layout is responsive to screen sized.
-The password can contain special characters.
+This project is an application which generates random passwords after the user selects their desired criteria.
+The user can pick the character length, and choose to include numbers, lowercase, uppercase, and special characters through windown prompts/confirmations.
+Users are then presented with their new password on the screen.
 
-This is a Javascript project, based off the assigned user story-
-
-```
-"AS AN employee with access to sensitive data
-I WANT to randomly generate a password that meets certain criteria
-SO THAT I can create a strong password that provides greater security"
-```
-
-The need for a strong password for secrurity is important,
+The HTML and stylesheet were provided by the course. It was our job to write the Javascript based off the assigned user story-
 
 ```
 "GIVEN I need a new, secure password
@@ -34,16 +26,27 @@ WHEN the password is generated
 THEN the password is either displayed in an alert or written to the page"
 ```
 
+To complete this project, I created 4 arrays for available character types, and one empty array. Then created prompts for password length (validated through an if...else statement), as well as window confirms to let a user select what type of characters they want to include (pressing 'ok' = true and included, 'cancel' = false and excluded). Once a character type is confirmed yes/true, it is pushed into the empty array, to store the user's choices.
+Another function (the strength validator) includes an if...else statement which checks that at least one type of character was chosen to move forward.
+After the user's choices are stored, the array goes through a for loop (called randomizer), which grabs random values from the user's choice array, and runs through the password length selected.
+The .join method is then used to turn the result of the for loop into a string without commas.
+Lastly, I linked the writepassword function to the completePassword method so the string would be displayed on the page. (the writePassword function was previously provided, as well as buttons).
+
+## Screenshots
+
+![Example password/screenshot](https://user-images.githubusercontent.com/95142863/149854056-c8a224ea-952c-4087-bf2b-14605587c957.png)
+
 ## Resources
 
 - [Documentation for Data Types](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures)
 - [Documentation for Expressions and Operators](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators)
 - [DOM Documentation](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model)
 - [Special Characters resource](https://owasp.org/www-community/password-special-characters)
-
-## Screenshots
-
-[Mock-up](/assets/Screen Shot 2022-01-12 at 9.44.14 PM.png)
+- [Array.prototype.push()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/push)
+- [Indexed collections](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Indexed_collections)
+- [Math.random()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random#getting_a_random_integer_between_two_values_inclusive)
+- [For loops](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for)
+- [Array.prototype.join()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/join)
 
 ## Used For
 
