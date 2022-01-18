@@ -2,6 +2,8 @@
 
 Challenge: 03 Javascript: String Generator ✨
 
+Click to view the [deployed application](https://dieterichelizabeth.github.io/password-generator/)
+
 This project is an application which generates random passwords after the user selects their desired criteria.
 The user can pick the character length, and choose to include numbers, lowercase, uppercase, and special characters through windown prompts/confirmations.
 Users are then presented with their new password on the screen.
@@ -26,11 +28,14 @@ WHEN the password is generated
 THEN the password is either displayed in an alert or written to the page"
 ```
 
-To complete this project, I created 4 arrays for available character types, and one empty array. Then created the start function, with prompts for password length (validated through an if...else statement), as well as window confirms to let a user select what type of characters they want to include (pressing 'ok' = included, 'cancel' = excluded). Once a character type is confirmed yes/true, it is pushed into the empty array, to store the user's choices.
-Another if...else statement checks that at least one type of character was chosen to move forward.
-After the user's choices are stored, the array goes through a for loop (called randomizer), which grabs random values from the user's choice array, and runs through the password length selected.
-The .join method is then turns the result of the for loop into a string without commas.
-Lastly, I linked the writepassword function to the completePassword method so the string would be displayed on the page. (the writePassword function was previously provided, as well as buttons).
+To complete this project, I
+
+- created 4 arrays for available character types, and one empty array. Then created the start function with prompts for password length (validated through an if...else statement), as well as window confirms to let a user select what type of characters they want to include.
+- Once a character type is confirmed yes/true, it is pushed into the empty array, to store the user's choices.
+- Another if...else checks that at least one type of character was chosen to move forward.
+- After the user's choices are stored, the array goes through a for loop (called randomizer), which grabs random values from the user's choice array, and runs through the password length selected.
+- The .join method is then turns the result of the for loop into a string without commas.
+- Lastly, I linked the writepassword function to the completePassword method so the string would be displayed on the page. (the writePassword function was previously provided, as well as buttons).
 
 ## Screenshots
 
