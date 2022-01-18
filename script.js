@@ -6,6 +6,7 @@ var numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
 var specialCharacters = ['!', '@', '#', '$', '%', '^', '(', ')', '-', '+', '/', '?', '{', '}', '[', ']', '~' ];
 let selectedCriteria = [];
 
+function start() {
 // Prompt for the user to select password length
 var passwordLengthSelected =
     // ask for prefferred password length
@@ -17,12 +18,19 @@ var passwordLengthSelected =
     if (passwordLengthSelected >= 8 && passwordLengthSelected <= 128) {
       // if this statement is true, the value is saved --> move to the next function
       console.log ("valid length");
-      // HOW TO MOVE TO THE NEXT FUNCTION?
     }
-    // if the statement is false- prompt try again
-    else
-      window.alert("You did not pick a valid option. Please type a number between 8 and 128.")
-      // HOW TO RE-START THIS LOOP?  
+    // if the statement is false- prompt try again message
+    else {
+      // if user selects ok: function re-starts
+      if (confirm ("You did not pick a valid option. Would you like to try again?")== true) {
+        start();
+        return;
+      }
+      // if a user cancels- function ends
+        else {
+          return;
+        }
+    };
 
 // Prompt user to select password criteria
 var passwordCriteria = 
@@ -70,21 +78,24 @@ var passwordCriteria =
         console.log ("special characters not included");
       }
 
-  console.log(selectedCriteria);
+  //console.log(selectedCriteria);
 
-// Function to validate password strength by checking at least one prompt was answered true/yes
-function strengthValidator () {
+// Validate password strength by checking at least one prompt was answered true/yes
     if (lowerCaseIncluded == true || upperCaseIncluded == true || numbersIncluded == true || specialIncluded == true) {
       // if there is one true statement (yes)- HOW TO MOVE TO THE NEXT FUNCTION? (return generatePassword (); ?)
       console.log ("strength validated");
     }
     // else- alert: You must include one of the following-
-    else {
-      window.alert("You must include one of the following: uppercase, lowercase, numbers, or special characters. Try again?");
-      //if yes- HOW TO RE-START THIS LOOP? 
-    }
-    // if user does not want to try again
-    // window.alert("come back when you want a strong password.");}
+    else{ 
+      // if user selects ok: function re-starts
+      if (confirm ("You must include one of the following: uppercase, lowercase, numbers, or special characters. Try again?")== true) {
+        start();
+        return;
+      }
+      // else- end function
+        else {
+          return;
+        }
   }
 
 // Create a loop to generate randomized array
@@ -101,22 +112,24 @@ let randomizer = new Array ();
 // Turn randomized array into a string without commas (completed password)
 var completePassword = randomizer.join('');
     console.log(completePassword);
+    writePassword ();
+
+// Write password to the #password input
+function writePassword() {
+    window.alert("Ready for your new password?");
+    var password = completePassword; 
+    var passwordText = document.querySelector("#password");
+
+    passwordText.value = password;
+  }
+}
 
 // button variable and i.d.
 var generateBtn = document.querySelector("#generate");
 
-// Write password to the #password input
-function writePassword() {
-  window.alert("Ready for your new password?");
-  var password = completePassword; 
-  var passwordText = document.querySelector("#password");
-
-  passwordText.value = password;
-}
 
 // Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
+generateBtn.addEventListener("click", start);
 
-strengthValidator ();
-writePassword ();
+
 
