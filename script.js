@@ -89,14 +89,18 @@ function strengthValidator () {
 
 // Create a loop to generate randomized array
 let randomizer = new Array ();
-  // for loop for passwordLengthSelected value (length)
-  for (let num = 0; num < passwordLengthSelected; num++) {
-      // grabbing random value from a selectedCriteria array
-      var selectedCriteriaRando = selectedCriteria[Math.floor(Math.random()*selectedCriteria.length)]; 
-      // pushing random grabbed value into randomizer array
-      randomizer.push(selectedCriteriaRando);
-  }
-  console.log(randomizer);
+    // for loop for passwordLengthSelected value (length)
+    for (let num = 0; num < passwordLengthSelected; num++) {
+        // grabbing random value from a selectedCriteria array
+        var selectedCriteriaRando = selectedCriteria[Math.floor(Math.random()*selectedCriteria.length)]; 
+        // pushing random grabbed value into randomizer array
+        randomizer.push(selectedCriteriaRando);
+    }
+    console.log(randomizer);
+
+// Turn randomized array into a string without commas (completed password)
+var completePassword = randomizer.join('');
+    console.log(completePassword);
 
 // button variable and i.d.
 var generateBtn = document.querySelector("#generate");
@@ -122,7 +126,7 @@ strengthValidator ();
 -Step 4. Create a validation method for double checking at least one character type was included
 -Step 5. Create a variable to contain user input
 -Step 6. Create a loop to generate random values from criteria by selected length
-Step 7. turn randomized array into a string (completed password)
+-Step 7. turn randomized array into a string (completed password)
 Step 8. Push the randomly generated password to HTML text-box
 Step 9. Display the password to the user
 */
@@ -169,3 +173,7 @@ Step 9. Display the password to the user
 //     goodc.push(dRando);
 // }
 // console.log(goodc);
+
+// https://www.w3schools.com/jsref/jsref_tostring_array.asp
+
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/join
