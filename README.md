@@ -2,7 +2,7 @@
 
 Challenge: 03 Javascript: String Generator ✨
 
-Click to view the [deployed application](https://dieterichelizabeth.github.io/password-generator/)
+Click to view the [deployed application](https://dieterichelizabeth.github.io/prompt-password-maker/)
 
 This project is an application which generates random passwords after the user selects their desired criteria.
 The user can pick the character length, and choose to include numbers, lowercase, uppercase, and special characters through windown prompts/confirmations.
