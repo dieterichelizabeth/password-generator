@@ -127,7 +127,6 @@ function writePassword() {
 // button variable and i.d.
 var generateBtn = document.querySelector("#generate");
 
-
 // Add event listener to generate button
 generateBtn.addEventListener("click", start);
 

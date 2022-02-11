@@ -1,4 +1,4 @@
-# Password Generator
+# Prompt Password Maker
 
 Challenge: 03 Javascript: String Generator ✨
 
